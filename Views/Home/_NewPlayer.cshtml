@@ -1,0 +1,10 @@
+@model Player;
+
+<form asp-action="Create" asp-controller="Home">
+    <div>
+        <label asp-for="Username">Name:</label>
+        <input placeholder="New Player" asp-for="Username" class="form-control" />
+    </div>
+    <br>
+    <button class="btn btn-success">Create</button>
+</form>
