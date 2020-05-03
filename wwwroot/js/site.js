@@ -21,12 +21,37 @@ $(document).ready(function () {
     // $('.p1cd2_F').hide();
     // $('.p1cd3_F').hide();
     // $('.p1cd4_F').hide();
-    $('.back-card').hide();
+    // $j3('.back-card').hide();
     
-    $('.card').click(function(){
-        $(this).find('.front-card').toggle();
-        $(this).find('.back-card').toggle();
+    // $j3('.card').click(function(){
+    //     $j3(this).find('.front-card').toggle();
+    //     $j3(this).find('.back-card').toggle();
+    // });
+
+    // $(function() {
+    //     $j3(window).unload(function(){
+    //         var scrollPosition = $j3("#playArea").scrollTop();
+    //         localStorage.setItem("scrollPosition", scrollPosition);
+    //     });
+    //     if(localStorage.scrollPosition) {
+    //         $j3("#playArea").scrollTop(localStorage.getItem("scrollPosition"));
+    //     }
+    // })
+
+    $j3(".rd1").click(function(e){
+        $j3(".rd1flip").click();
     });
+    $j3(".rd2").click(function(e){
+        $j3(".rd2flip").click();
+    });
+    $j3(".rd3").click(function(e){
+        $j3(".rd3flip").click();
+    });
+    $j3(".rd4").click(function(e){
+        $j3(".rd4flip").click();
+    });
+
+    $j2('.flipper').flip();
 
 
     // $('.p1rd1').click(function () {

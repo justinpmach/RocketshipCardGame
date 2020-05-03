@@ -17,8 +17,13 @@
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    @* Load jQuery 3.4.1 *@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="site.js"></script>
+    <script>var $j3 = $.noConflict(true);</script>
+    @* Load jQuery 2.1.4 *@
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    <script>var $j2 = $.noConflict(true);</script>
 </head>
 <body id="backgroundimg">
 <header>

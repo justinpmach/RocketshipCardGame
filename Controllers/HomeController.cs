@@ -60,7 +60,7 @@ namespace RocketShip.Controllers
                 }
             }
             List<Card> cardList =  new List<Card>();
-            foreach (var suit in new [] { "♠", "♡", "♣", "♢", })
+            foreach (var suit in new [] { "♠", "♥", "♣", "♦", })
             {
                 for (var rank = 1; rank <= 13; rank++)
                 {
@@ -83,7 +83,7 @@ namespace RocketShip.Controllers
                     }
                     else
                     {
-                        strVal = rank.ToString() + " " + "♟";
+                        strVal = rank.ToString();
                     }
                     Card newCard = new Card(strVal, suit, rank);
                     cardList.Add(newCard);
@@ -147,7 +147,7 @@ namespace RocketShip.Controllers
             }
             if(rdOneData == "fire")
             {
-                if(rdOnePlayer.rdOneCard.Suit == "♡" || rdOnePlayer.rdOneCard.Suit == "♢")
+                if(rdOnePlayer.rdOneCard.Suit == "♥" || rdOnePlayer.rdOneCard.Suit == "♦")
                 {
                     roundOneResult.Add(rdOnePlayer.Username + " Give 1 sip!");
                 }
@@ -251,7 +251,7 @@ namespace RocketShip.Controllers
             }
             if (rdFourData == "diamonds")
             {
-                if (rdFourPlayer.rdFourCard.Suit == "♢")
+                if (rdFourPlayer.rdFourCard.Suit == "♦")
                 {
                     roundFourResult.Add(rdFourPlayer.Username + " " +  " Give 4 sips!");
                 }
@@ -262,7 +262,7 @@ namespace RocketShip.Controllers
             }
             if (rdFourData == "hearts")
             {
-                if (rdFourPlayer.rdFourCard.Suit == "♡")
+                if (rdFourPlayer.rdFourCard.Suit == "♥")
                 {
                     roundFourResult.Add(rdFourPlayer.Username + " " +  " Give 4 sips!");
                 }
