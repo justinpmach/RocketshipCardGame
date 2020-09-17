@@ -38,17 +38,17 @@ $(document).ready(function () {
     //     }
     // })
 
-    $j3(".rd1").click(function(e){
-        $j3(".rd1flip").click();
+    $j3(".rd1").click(function(){
+        $j3(this).closest(".rd1flip").click();
     });
-    $j3(".rd2").click(function(e){
-        $j3(".rd2flip").click();
+    $j3(".rd2").click(function(){
+        $j3(this).closest(".rd2flip").click();
     });
-    $j3(".rd3").click(function(e){
-        $j3(".rd3flip").click();
+    $j3(".rd3").click(function(){
+        $j3(this).closest(".rd3flip").click();
     });
-    $j3(".rd4").click(function(e){
-        $j3(".rd4flip").click();
+    $j3(".rd4").click(function(){
+        $j3(this).closest(".rd4flip").click();
     });
 
     $j2('.flipper').flip();

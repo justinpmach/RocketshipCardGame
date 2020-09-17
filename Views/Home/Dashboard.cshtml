@@ -1,11 +1,24 @@
 @model Card
 @using RocketShip.Models
-
-<div class="row pt-4">
+<div class="row d-flex justify-content-center">
+    <h1 class=""style="
+    font-family:Impact;
+    font-size:500%;
+    background:linear-gradient(rgba(255,255,255,1),rgba(160,255,255,1),rgba(255,105,205,0.9));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;">ROCKET
+    <i class="fa fa-rocket" style="
+    background:linear-gradient(rgba(130,225,220,1),rgba(255,255,255,1),rgba(255,20,30,0.2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    "></i> SHIP
+    </h1>
+</div>
+<div class="row py-3 mb-3" style="background:linear-gradient(rgba(100,100,255,0.8),rgba(200,255,255,0.75)); border-radius:20px;">
     <div class="col-3">
-        <div class="col-10 ml-4 bg-white rounded border border-white overflow-auto" style="height:270px;">
-            <div class="row rounded-top bg-primary py-1 d-flex justify-content-center">
-                <h5 class="text-white">DRINK LOG</h5>
+        <div class="col-10 ml-4 bg-light rounded border border-white overflow-auto" style="height:270px;">
+            <div class="row rounded-top bg-info py-1 d-flex justify-content-center">
+                <h6 class="text-white">DRINK LOG</h6>
             </div>
         @{
         List<string> rdOneResult = Context.Session.GetObjectFromJson<List<string>>("RoundOneResult");
@@ -172,7 +185,8 @@
                     t2s = "text-dark";
                 }
         }
-        <div class="row">
+        @* @for (var suit = 0; suit < 12; suit++)
+        {
             <div class="flipper mr-3 mb-3"style="width:6rem; height:8rem;">
                 <div class="front card border-warning">
                     <div class="card-header">
@@ -191,16 +205,36 @@
                     </div>
                 </div>
             </div>
+        } *@
+        <div class="row">
             <div class="flipper mr-3 mb-3"style="width:6rem; height:8rem;">
-                <div class="front card border-warning">
+                <div class="front card bg-warning border-white">
                     <div class="card-header">
-                        <h6 class="card-title text-warning">TAKE</h6>
+                        <h6 class="card-title text-white">TAKE</h6>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-title text-warning">2</h6>
+                        <h6 class="card-title text-white">1 <i class="ml-2 fa fa-rocket bg-white text-primary rounded-circle"></i></h6>
                     </div>
                 </div>
-                <div class="back card border-warning @t2">
+                <div class="back card border-white @t1">
+                    <div class="card-header">
+                        <h6 class="card-title">@ViewBag.CardArr.cards[5].StringVal</h6>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">@ViewBag.CardArr.cards[5].Suit</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="flipper mr-3 mb-3"style="width:6rem; height:8rem;">
+                <div class="front card bg-warning border-white">
+                    <div class="card-header">
+                        <h6 class="card-title text-white">TAKE</h6>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title text-white">2 <i class="ml-2 fa fa-rocket bg-white text-primary rounded-circle"></i></h6>
+                    </div>
+                </div>
+                <div class="back card border-white @t2">
                     <div class="card-header">
                         <h6 class="card-title">@ViewBag.CardArr.cards[4].StringVal</h6>
                     </div>
@@ -210,15 +244,15 @@
                 </div>
             </div>
             <div class="flipper mb-3 mr-3"style="width:6rem; height:8rem;">
-                <div class="front card border-warning">
+                <div class="front card bg-warning border-white">
                     <div class="card-header">
-                        <h6 class="card-title text-warning">TAKE</h6>
+                        <h6 class="card-title text-white">TAKE</h6>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-title text-warning">3</h6>
+                        <h6 class="card-title text-white">3 <i class="ml-2 fa fa-rocket bg-white text-primary rounded-circle"></i></h6>
                     </div>
                 </div>
-                <div class="back card border-warning @t3">
+                <div class="back card border-white @t3">
                     <div class="card-header">
                         <h6 class="card-title">@ViewBag.CardArr.cards[3].StringVal</h6>
                     </div>
@@ -228,12 +262,12 @@
                 </div>
             </div>
             <div class="flipper mb-3 mr-3"style="width:6rem; height:8rem;">
-                <div class="front card border-warning">
+                <div class="front card bg-warning border-white">
                     <div class="card-header">
-                        <h6 class="card-title text-warning">TAKE</h6>
+                        <h6 class="card-title text-white">TAKE</h6>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-title text-warning">4</h6>
+                        <h6 class="card-title text-white">4 <i class="ml-2 fa fa-rocket bg-white text-primary rounded-circle"></i></h6>
                     </div>
                 </div>
                 <div class="back card border-warning @t4">
@@ -246,12 +280,12 @@
                 </div>
             </div>
             <div class="flipper mb-3"style="width:6rem; height:8rem;">
-                <div class="front card border-warning">
+                <div class="front card bg-warning border-white">
                     <div class="card-header">
-                        <h6 class="card-title text-warning">TAKE</h6>
+                        <h6 class="card-title text-white">TAKE</h6>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-title text-warning text-success">SHOT</h6>
+                        <h6 class="card-title text-white">SHOT</h6>
                     </div>
                 </div>
                 <div class="back card border-warning @tS">
@@ -267,15 +301,15 @@
         </div>
         
 
-        <div class="row mb-5">
+        <div class="row">
             
-            <div class="flipper mb-3 mr-3"style="width:6rem; height:8rem;">
-                <div class="front card border-success">
+            <div class="flipper mr-3"style="width:6rem; height:8rem;">
+                <div class="front card bg-success border-white">
                     <div class="card-header">
-                        <h6 class="card-title text-success">GIVE</h6>
+                        <h6 class="card-title text-white">GIVE</h6>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-title text-success">1</h6>
+                        <h6 class="card-title text-white">1 <i class="ml-2 fa fa-rocket bg-white text-primary rounded-circle"></i></h6>
                     </div>
                 </div>
                 <div class="back card border-success @g1">
@@ -288,12 +322,12 @@
                 </div>
             </div>
             <div class="flipper mb-3 mr-3" style="width:6rem; height:8rem;">
-                <div class="front card border-success">
+                <div class="front card bg-success border-white">
                     <div class="card-header">
-                        <h6 class="card-title text-success">GIVE</h6>
+                        <h6 class="card-title text-white">GIVE</h6>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-title text-success">2</h6>
+                        <h6 class="card-title text-white">2 <i class="ml-2 fa fa-rocket bg-white text-primary rounded-circle"></i></h6>
                     </div>
                 </div>
                 <div class="back card border-success @g2">
@@ -305,13 +339,13 @@
                     </div>
                 </div>
             </div>
-            <div class="flipper mb-3 mr-3"style="width:6rem; height:8rem;">
-                <div class="front card border-success">
+            <div class="flipper mr-3"style="width:6rem; height:8rem;">
+                <div class="front card bg-success border-white">
                     <div class="card-header">
-                        <h6 class="card-title text-success">GIVE</h6>
+                        <h6 class="card-title text-white">GIVE</h6>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-title text-success">3</h6>
+                        <h6 class="card-title text-white">3 <i class="ml-2 fa fa-rocket bg-white text-primary rounded-circle"></i></h6>
                     </div>
                 </div>
                 <div class="back card border-success @g3">
@@ -323,13 +357,13 @@
                     </div>
                 </div>
             </div>
-            <div class="flipper mb-3 mr-3"style="width:6rem; height:8rem;">
-                <div class="front card border-success">
+            <div class="flipper mr-3"style="width:6rem; height:8rem;">
+                <div class="front card bg-success border-white">
                     <div class="card-header">
-                        <h6 class="card-title text-success">GIVE</h6>
+                        <h6 class="card-title text-white">GIVE</h6>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-title text-success">4</h6>
+                        <h6 class="card-title text-white">4 <i class="ml-2 fa fa-rocket bg-white text-primary rounded-circle"></i></h6>
                     </div>
                 </div>
                 <div class="back card border-success @g4">
@@ -341,13 +375,13 @@
                     </div>
                 </div>
             </div>
-            <div class="flipper mb-3"style="width:6rem; height:8rem;">
-                <div class="front card border-success">
+            <div class="flipper"style="width:6rem; height:8rem;">
+                <div class="front card bg-success border-white">
                     <div class="card-header">
-                        <h6 class="card-title text-success">GIVE</h6>
+                        <h6 class="card-title text-white">GIVE</h6>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-title text-success">SHOT</h6>
+                        <h6 class="card-title text-white">SHOT</h6>
                     </div>
                 </div>
                 <div class="back card border-success @gS">
@@ -365,12 +399,12 @@
     </div>
     <div class="col-3">
         <div class="flipper" style="width:7rem; height:8rem; margin-top:50px;">
-            <div class="front card border-danger">
+            <div class="front card border-white bg-danger">
                 <div class="card-header">
-                    <h6 class="card-title text-danger">TAKE (2)</h6>
+                    <h6 class="card-title text-white">TAKE 2</h6>
                 </div>
                 <div class="card-body">
-                    <h6 class="card-title text-danger">SHOTS</h6>
+                    <h6 class="card-title text-white">SHOTS</h6>
                 </div>
             </div>
             <div class="back card border-danger @t2s">
@@ -434,19 +468,32 @@
                 {
                     suitColor4 = "text-dark";
                 }
-                <div class="row mb-1 font-weight-bold">
-                    <div class="col-2 ml-3 bg-primary rounded pt-2 pb-1">
+                <div class="row w-100 text-white roundCount" style="padding-left:18%">
+                    <h6 class="pl-3 mr-4 bg-primary">ROUND 1</h6>
+                    <h6 class="pl-3 mr-4 bg-primary">ROUND 2</h6>
+                    <h6 class="pl-3 mr-4 bg-primary">ROUND 3</h6>
+                    <h6 class="pl-3 bg-primary">ROUND 4</h6>
+                </div>
+                <div class="row mb-3 p-2 font-weight-bold" style="background:linear-gradient(rgba(100,100,255,0.7),rgba(200,255,255,0.7)); border-radius:20px;">
+                    <div class="pt-2 pb-1">
                         <img src="~/images/astronaut.jpg" class="rounded-circle" alt=""  height="70px;" width="70px">
                         <h6 class="text-center text-white mt-3">@player.Username</h6>
                     </div>
                     
-                    <div class="rd1flip flipper ml-4" style="width:6rem; height:8rem;">
-                        <div class="front card border-primary">
-                            <div class="card-header">
-                                <h6 class="card-title text-dark">SMOK</h6>
+                    <div class="rd1flip flipper ml-4" style="width:6rem; height:7.45rem;">
+                        <div class="front card border-white">
+                            <div class="card-header p-0">
+                                @* <h6 class="card-title text-dark">SMOK</h6> *@
+                                <form method="POST" asp-action="RoundOne" asp-route-playerId="@player.PlayerId"  asp-route-rdOneData="smoke">
+                                    <button class="rd1 btn btn-dark py-3 w-100">SMOKE<i class="fa fa-fire-extinguisher"></i></button>
+                                </form>
+                            
                             </div>
-                            <div class="card-body">
-                                <h6 class="card-title text-danger">FIRE</h6>
+                            <div class="card-body p-0">
+                                @* <h6 class="card-title text-danger">FIRE</h6> *@
+                                <form method="POST" asp-action="RoundOne" asp-route-playerId="@player.PlayerId"  asp-route-rdOneData="fire">
+                                    <button class="rd1 btn btn-danger py-3 w-100">FIRE <i class="fa fa-fire"></i></button>
+                                </form>
                             </div>
                         </div>
                         <div class="back card border-secondary @suitColor1">
@@ -459,13 +506,19 @@
                         </div>
                     </div>
         
-                    <div class="rd2flip flipper ml-4" style="width:6rem; height:8rem;">
-                        <div class="front card border-primary">
-                            <div class="card-header">
-                                <h6 class="card-title text-success">HIGH</h6>
+                    <div class="rd2flip flipper ml-4" style="width:6rem; height:7.45rem;">
+                        <div class="front card border-white">
+                            <div class="card-header p-0">
+                                @* <h6 class="card-title text-success">HIGH</h6> *@
+                                <form method="POST" asp-action="RoundTwo" asp-route-playerId="@player.PlayerId"  asp-route-rdTwoData="high">
+                                    <button class="rd2 btn btn-danger py-3 w-100">HIGH <i class="fa fa-arrow-circle-up"></i></button>
+                                </form>
                             </div>
-                            <div class="card-body">
-                                <h6 class="card-title text-danger">LOW</h6>
+                            <div class="card-body p-0">
+                                @* <h6 class="card-title text-danger">LOW</h6> *@
+                                <form method="POST" asp-action="RoundTwo" asp-route-playerId="@player.PlayerId"  asp-route-rdTwoData="low">
+                                    <button class="rd2 btn btn-warning text-white py-3 w-100">LOW <i class="fa fa-arrow-circle-down"></i></button>
+                                </form>
                             </div>
                         </div>
                         <div class="back card border-primary @suitColor2">
@@ -478,13 +531,19 @@
                         </div>
                     </div>
         
-                    <div class="rd3flip flipper ml-4" style="width:6rem; height:8rem;">
-                        <div class="front card border-primary">
-                            <div class="card-header">
-                                <h6 class="card-title text-success">IN</h6>
+                    <div class="rd3flip flipper ml-4" style="width:6rem; height:7.45rem;">
+                        <div class="front card border-white">
+                            <div class="card-header p-0">
+                                @* <h6 class="card-title text-success">IN</h6> *@
+                                <form method="POST" asp-action="RoundThree" asp-route-playerId="@player.PlayerId"  asp-route-rdThreeData="in">
+                                    <button class="rd3 btn btn-success py-3 w-100"><i class="fa fa-arrow-circle-right"></i> IN <i class="fa fa-arrow-circle-left"></i></button>
+                                </form>
                             </div>
-                            <div class="card-body">
-                                <h6 class="card-title text-danger">OUT</h6>
+                            <div class="card-body p-0">
+                                @* <h6 class="card-title text-danger">OUT</h6> *@
+                                <form method="POST" asp-action="RoundThree" asp-route-playerId="@player.PlayerId"  asp-route-rdThreeData="out">
+                                    <button class="rd3 btn btn-danger py-3 w-100"><i class="fa fa-arrow-circle-left"></i>OUT<i class="fa fa-arrow-circle-right"></i></button>
+                                </form>
                             </div>
                         </div>
                         <div class="back card border-primary @suitColor3">
@@ -497,13 +556,29 @@
                         </div>
                     </div>
         
-                    <div class="rd4flip flipper ml-4" style="width:6rem; height:8rem;">
-                        <div class="front card border-primary">
-                            <div class="card-header">
-                                <h6 class="card-title text-dark">♠ ♣</h6>
+                    <div class="rd4flip flipper ml-4" style="width:6.15rem; height:7.45rem;">
+                        <div class="front card border-white">
+                            <div class="card-header p-0">
+                                @* <h6 class="card-title text-dark">♠ ♣</h6> *@
+                                <div class="row d-flex justify-content-center">
+                                    <form method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="spades">
+                                        <button class="rd4 btn btn-dark py-3"style="width:48px">♠</button>
+                                    </form>
+                                    <form method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="hearts">
+                                        <button class="rd4 btn btn-danger py-3" style="width:48px">♥</button>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <h6 class="card-title text-danger">♥ ♦</h6>
+                            <div class="card-body p-0">
+                                @* <h6 class="card-title text-danger">♥ ♦</h6> *@
+                                <div class="row d-flex justify-content-center">
+                                    <form method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="diamonds">
+                                        <button class="rd4 btn btn-danger py-3" style="width:48px">♦</button>
+                                    </form>
+                                    <form method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="clubs">
+                                        <button class="rd4 btn btn-dark py-3"style="width:48px">♣</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                         <div class="back card border-primary @suitColor4">
@@ -517,17 +592,17 @@
                     </div>
                 </div>
                 @* ---------------ACTIONS------------ *@
-                <div class="row ml-1 mb-2">
+                @* <div class="row ml-1 mb-2">
                     <div class="col-2 pt-2 pb-1"style="width:6rem;">
                         <h6 class="text-center text-white font-weight-bold mt-3">ACTIONS</h6>
                     </div>
                     <div class="col ml-4"style="width:6rem;">
                         <div class="row d-flex justify-content-between">
                             <form method="POST" asp-action="RoundOne" asp-route-playerId="@player.PlayerId"  asp-route-rdOneData="smoke">
-                                <button class="rd1 btn btn-dark border-white" type="button" style="width:6rem;"><i class="fa fa-fire-extinguisher"></i></button>
+                                <button class="rd1 btn btn-dark border-white" style="width:6rem;"><i class="fa fa-fire-extinguisher"></i></button>
                             </form>
                             <form method="POST" asp-action="RoundOne" asp-route-playerId="@player.PlayerId"  asp-route-rdOneData="fire">
-                                <button class="rd1 btn btn-danger border-white" type="button" style="width:6rem;"><i class="fa fa-fire"></i></button>
+                                <button class="rd1 btn btn-danger border-white" style="width:6rem;"><i class="fa fa-fire"></i></button>
                             </form>
                         </div>
                     </div>
@@ -566,14 +641,14 @@
                         </div>
                         <div class="row">
                             <form method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="diamonds">
-                                <button class="r4 btn btn-danger border-white" style="width:3rem;">♦</button>
+                                <button class="rd4 btn btn-danger border-white" style="width:3rem;">♦</button>
                             </form>
                             <form method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="hearts">
-                                <button class="r4 btn btn-danger border-white" style="width:3rem;">♥</button>
+                                <button class="rd4 btn btn-danger border-white" style="width:3rem;">♥</button>
                             </form>
                         </div>
                     </div>
-                </div> 
+                </div>  *@
             }
         </div>
         }

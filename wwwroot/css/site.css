@@ -7,8 +7,6 @@ a.navbar-brand {
   word-break: break-all;
 }
 
-/* CARD FLIP  */
-#flipper 
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -46,17 +44,40 @@ html {
 
 body {
   /* Margin bottom by footer height */
-  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/rs.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../images/rs.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   margin-bottom: 60px;
 }
 
-.container {
+.flipper h6
+{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+}
+.flipper button
+{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 16.67px;
+}
+
+.info-page{
+  background:linear-gradient(rgba(100,240,255,0.7),rgba(100,105,185,0.7)); 
+  border-radius:10px;
+  color: white;
+  font-weight: 600;
+}
+/* .container {
   background-color: white;
   background: linear-gradient(rgba(255, 255, 255, 0.384),rgba(255, 255, 255, 0.397));
   border-radius: 20px;
+} */
+.roundCount h6{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border-radius:10px;
+  width:6rem;
+  padding: 1% 2%;
 }
 
 .footer {
