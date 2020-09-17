@@ -10,3 +10,4 @@ namespace RocketShip.Models
         public DbSet<Deck> Decks {get; set;}
     }
 }
+
