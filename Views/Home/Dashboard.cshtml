@@ -198,27 +198,6 @@
                     t2s = "text-dark";
                 }
         }
-        @* @for (var suit = 0; suit < 12; suit++)
-        {
-            <div class="flipper mr-3 mb-3"style="width:6rem; height:8rem;">
-                <div class="front card border-warning">
-                    <div class="card-header">
-                        <h6 class="card-title text-warning">TAKE</h6>
-                    </div>
-                    <div class="card-body">
-                        <h6 class="card-title text-warning">1</h6>
-                    </div>
-                </div>
-                <div class="back card border-warning @t1">
-                    <div class="card-header">
-                        <h6 class="card-title">@ViewBag.CardArr.cards[5].StringVal</h6>
-                    </div>
-                    <div class="card-body">
-                        <h6 class="card-title">@ViewBag.CardArr.cards[5].Suit</h6>
-                    </div>
-                </div>
-            </div>
-        } *@
         <div class="row">
             <div class="flipper mr-3 mb-3"style="width:6rem; height:8rem;">
                 <div class="front card bg-warning border-white">
@@ -500,36 +479,8 @@
                                 <form class="roundz-1" method="POST" asp-action="RoundOne" asp-route-playerId="@player.PlayerId"  asp-route-rdOneData="smoke">
                                     <button class="rd1 btn btn-dark py-3 w-100">SMOKE<i class="fa fa-fire-extinguisher"></i></button>
                                 </form>
-
-                                @* <script>
-                                    $j3('.roundz-1').submit(function (e) {
-                                        e.preventDefault();
-                                        var form = $(this);
-                                        $.ajax({
-                                            type: form.attr('method'),
-                                            url: form.attr('action'),
-                                            data: form.serialize(),
-                                            success: function (data) {
-                                                    console.log(data);
-                                                    var html_to_append = '';
-                                                    $.each(data, function(i, d) {
-                                                        html_to_append +=
-                                                                '<ul style="list-style: none; padding:0px;"><li>' +
-                                                                    d + '</li></ul>';
-
-                                                    });
-                                                    $(".res-1").html(html_to_append);
-                                                    },
-                                                    error: function() {
-                                                    console.log(data);
-                                            }
-                                        });
-                                    });
-                                </script> *@
-                            
                             </div>
                             <div class="card-body p-0">
-                                @* <h6 class="card-title text-danger">FIRE</h6> *@
                                 <form class="roundz-1" method="POST" asp-action="RoundOne" asp-route-playerId="@player.PlayerId"  asp-route-rdOneData="fire">
                                     <button class="rd1 btn btn-danger py-3 w-100">FIRE <i class="fa fa-fire"></i></button>
                                 </form>
@@ -548,13 +499,11 @@
                     <div class="rd2flip flipper ml-4" style="width:6rem; height:7.45rem;">
                         <div class="front card border-white">
                             <div class="card-header p-0">
-                                @* <h6 class="card-title text-success">HIGH</h6> *@
                                 <form class="roundz-2" method="POST" asp-action="RoundTwo" asp-route-playerId="@player.PlayerId"  asp-route-rdTwoData="high">
                                     <button class="rd2 btn btn-danger py-3 w-100">HIGH <i class="fa fa-arrow-circle-up"></i></button>
                                 </form>
                             </div>
                             <div class="card-body p-0">
-                                @* <h6 class="card-title text-danger">LOW</h6> *@
                                 <form class="roundz-2" method="POST" asp-action="RoundTwo" asp-route-playerId="@player.PlayerId"  asp-route-rdTwoData="low">
                                     <button class="rd2 btn btn-warning text-white py-3 w-100">LOW <i class="fa fa-arrow-circle-down"></i></button>
                                 </form>
@@ -573,13 +522,11 @@
                     <div class="rd3flip flipper ml-4" style="width:6rem; height:7.45rem;">
                         <div class="front card border-white">
                             <div class="card-header p-0">
-                                @* <h6 class="card-title text-success">IN</h6> *@
                                 <form class="roundz-3" method="POST" asp-action="RoundThree" asp-route-playerId="@player.PlayerId"  asp-route-rdThreeData="in">
                                     <button class="rd3 btn btn-success py-3 w-100"><i class="fa fa-arrow-circle-right"></i> IN <i class="fa fa-arrow-circle-left"></i></button>
                                 </form>
                             </div>
                             <div class="card-body p-0">
-                                @* <h6 class="card-title text-danger">OUT</h6> *@
                                 <form class="roundz-3" method="POST" asp-action="RoundThree" asp-route-playerId="@player.PlayerId"  asp-route-rdThreeData="out">
                                     <button class="rd3 btn btn-danger py-3 w-100"><i class="fa fa-arrow-circle-left"></i>OUT<i class="fa fa-arrow-circle-right"></i></button>
                                 </form>
@@ -598,7 +545,6 @@
                     <div class="rd4flip flipper ml-4" style="width:6.15rem; height:7.45rem;">
                         <div class="front card border-white">
                             <div class="card-header p-0">
-                                @* <h6 class="card-title text-dark">♠ ♣</h6> *@
                                 <div class="row d-flex justify-content-center">
                                     <form class="roundz-4" method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="spades">
                                         <button class="rd4 btn btn-dark py-3"style="width:48px">♠</button>
@@ -609,7 +555,6 @@
                                 </div>
                             </div>
                             <div class="card-body p-0">
-                                @* <h6 class="card-title text-danger">♥ ♦</h6> *@
                                 <div class="row d-flex justify-content-center">
                                     <form class="roundz-4" method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="diamonds">
                                         <button class="rd4 btn btn-danger py-3" style="width:48px">♦</button>
@@ -630,64 +575,6 @@
                         </div>
                     </div>
                 </div>
-                @* ---------------ACTIONS------------ *@
-                @* <div class="row ml-1 mb-2">
-                    <div class="col-2 pt-2 pb-1"style="width:6rem;">
-                        <h6 class="text-center text-white font-weight-bold mt-3">ACTIONS</h6>
-                    </div>
-                    <div class="col ml-4"style="width:6rem;">
-                        <div class="row d-flex justify-content-between">
-                            <form method="POST" asp-action="RoundOne" asp-route-playerId="@player.PlayerId"  asp-route-rdOneData="smoke">
-                                <button class="rd1 btn btn-dark border-white" style="width:6rem;"><i class="fa fa-fire-extinguisher"></i></button>
-                            </form>
-                            <form method="POST" asp-action="RoundOne" asp-route-playerId="@player.PlayerId"  asp-route-rdOneData="fire">
-                                <button class="rd1 btn btn-danger border-white" style="width:6rem;"><i class="fa fa-fire"></i></button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col ml-4" style="width:6rem;">
-                        <div class="row">
-                            <form method="POST" asp-action="RoundTwo" asp-route-playerId="@player.PlayerId"  asp-route-rdTwoData="high">
-                                <button class="rd2 btn btn-success border-white" style="width:6rem;"><i class="fa fa-arrow-circle-up"></i></button>
-                            </form>
-                            <form method="POST" asp-action="RoundTwo" asp-route-playerId="@player.PlayerId"  asp-route-rdTwoData="low">
-                                <button class="rd2 btn btn-danger border-white" style="width:6rem;"><i class="fa fa-arrow-circle-down"></i></button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col ml-4" style="width:6rem;">
-                        <div class="row">
-                            <form method="POST" asp-action="RoundThree" asp-route-playerId="@player.PlayerId"  asp-route-rdThreeData="in">
-                                <button class="rd3 btn btn-success border-white" style="width:6rem;"><i class="fa fa-arrow-circle-right"></i><i class="fa fa-arrow-circle-left"></i></button>
-                            </form>
-                            
-                            <form method="POST" asp-action="RoundThree" asp-route-playerId="@player.PlayerId"  asp-route-rdThreeData="out">
-                                <button class="rd3 btn btn-danger border-white" style="width:6rem;"><i class="fa fa-arrow-circle-left"></i><i class="fa fa-arrow-circle-right"></i></button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col ml-4"style="width:6rem;">
-                        <div class="row">
-                            <form method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="spades">
-                                <button class="rd4 btn btn-dark border-white" style="width:3rem;">♠</button>
-                            </form>
-                            <form method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="clubs">
-                                <button class="rd4 btn btn-dark border-white" style="width:3rem;">♣</button>
-                            </form>
-                        </div>
-                        <div class="row">
-                            <form method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="diamonds">
-                                <button class="rd4 btn btn-danger border-white" style="width:3rem;">♦</button>
-                            </form>
-                            <form method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="hearts">
-                                <button class="rd4 btn btn-danger border-white" style="width:3rem;">♥</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>  *@
             }
         </div>
         }
