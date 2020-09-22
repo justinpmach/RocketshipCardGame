@@ -54,6 +54,36 @@ $(document).ready(function () {
     $j2('.flipper').flip();
 
 
+// $j(document).on("submit", "form", function (event) {
+//     var form = $(this);
+
+//     if (form.valid()) {
+//         $.ajax({
+//             url: this.action, 
+//             type: this.method,
+//             data: $(this).serialize(),
+//             success: function (html) {
+//                 // Do something with the returned html.
+//             }
+//         });
+//     }
+
+//     event.preventDefault();
+// });
+
+    // $j3('#smoke-btn').submit(function (e) {
+    //     e.preventDefault();
+    //     var form = $(this);
+    //     $.ajax({
+    //         type: form.attr('method'),
+    //         url: form.attr('action'),
+    //         data: form.serialize(),
+    //         success: function (data) {
+    //                 console.log(data);
+    //         }
+    //     });
+    //     });
+
     // $('.p1rd1').click(function () {
     //     $(".p1cd1").hide();
     //     $(".p1cd1_F").show()

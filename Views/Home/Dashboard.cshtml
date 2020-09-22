@@ -26,8 +26,21 @@
         List<string> rdThreeResult = Context.Session.GetObjectFromJson<List<string>>("RoundThreeResult");
         List<string> rdFourResult = Context.Session.GetObjectFromJson<List<string>>("RoundFourResult");
         }
-            <div class="text-secondary mt-3">
-                @if (rdOneResult != null)
+            <div class="res-1 text-secondary mt-3">
+
+                @* <script>
+                    $j3('#smoke-btn').click(function (e) {
+                        $.ajax({
+                            type: 'GET',
+                            url: "/RoundOne?playerId=19&rdOneData=smoke/",
+                            data: 'json',
+                            success: function (data) {
+                                    console.log(data + " " + "result");
+                            }
+                        });
+                    });
+                </script> *@
+                @* @if (rdOneResult != null)
                 {
                     @foreach (string resOne in rdOneResult)
                     {
@@ -35,10 +48,10 @@
                             <li>@resOne</li>
                         </ul>
                     }
-                }
+                } *@
             </div>
-            <div class="text-primary">
-                @if (rdTwoResult != null)
+            <div class="res-2 text-primary">
+                @* @if (rdTwoResult != null)
                 {
                     @foreach (string resTwo in rdTwoResult)
                     {
@@ -46,10 +59,10 @@
                             <li>@resTwo</li>
                         </ul>
                     }
-                }
+                } *@
             </div>
-            <div class="text-warning">
-                @if (rdThreeResult != null)
+            <div class="res-3 text-warning">
+                @* @if (rdThreeResult != null)
                 {
                     @foreach (string resThree in rdThreeResult)
                     {
@@ -57,10 +70,10 @@
                             <li>@resThree</li>
                         </ul>
                     }
-                }
+                } *@
             </div>
-            <div class="text-danger">
-                @if (rdFourResult != null)
+            <div class="res-4 text-danger">
+                @* @if (rdFourResult != null)
                 {
                     @foreach (string resFour in rdFourResult)
                     {
@@ -68,7 +81,7 @@
                             <li>@resFour</li>
                         </ul>
                     }
-                }
+                } *@
             </div>
         </div>
     </div>
@@ -484,14 +497,40 @@
                         <div class="front card border-white">
                             <div class="card-header p-0">
                                 @* <h6 class="card-title text-dark">SMOK</h6> *@
-                                <form method="POST" asp-action="RoundOne" asp-route-playerId="@player.PlayerId"  asp-route-rdOneData="smoke">
+                                <form class="roundz-1" method="POST" asp-action="RoundOne" asp-route-playerId="@player.PlayerId"  asp-route-rdOneData="smoke">
                                     <button class="rd1 btn btn-dark py-3 w-100">SMOKE<i class="fa fa-fire-extinguisher"></i></button>
                                 </form>
+
+                                @* <script>
+                                    $j3('.roundz-1').submit(function (e) {
+                                        e.preventDefault();
+                                        var form = $(this);
+                                        $.ajax({
+                                            type: form.attr('method'),
+                                            url: form.attr('action'),
+                                            data: form.serialize(),
+                                            success: function (data) {
+                                                    console.log(data);
+                                                    var html_to_append = '';
+                                                    $.each(data, function(i, d) {
+                                                        html_to_append +=
+                                                                '<ul style="list-style: none; padding:0px;"><li>' +
+                                                                    d + '</li></ul>';
+
+                                                    });
+                                                    $(".res-1").html(html_to_append);
+                                                    },
+                                                    error: function() {
+                                                    console.log(data);
+                                            }
+                                        });
+                                    });
+                                </script> *@
                             
                             </div>
                             <div class="card-body p-0">
                                 @* <h6 class="card-title text-danger">FIRE</h6> *@
-                                <form method="POST" asp-action="RoundOne" asp-route-playerId="@player.PlayerId"  asp-route-rdOneData="fire">
+                                <form class="roundz-1" method="POST" asp-action="RoundOne" asp-route-playerId="@player.PlayerId"  asp-route-rdOneData="fire">
                                     <button class="rd1 btn btn-danger py-3 w-100">FIRE <i class="fa fa-fire"></i></button>
                                 </form>
                             </div>
@@ -510,13 +549,13 @@
                         <div class="front card border-white">
                             <div class="card-header p-0">
                                 @* <h6 class="card-title text-success">HIGH</h6> *@
-                                <form method="POST" asp-action="RoundTwo" asp-route-playerId="@player.PlayerId"  asp-route-rdTwoData="high">
+                                <form class="roundz-2" method="POST" asp-action="RoundTwo" asp-route-playerId="@player.PlayerId"  asp-route-rdTwoData="high">
                                     <button class="rd2 btn btn-danger py-3 w-100">HIGH <i class="fa fa-arrow-circle-up"></i></button>
                                 </form>
                             </div>
                             <div class="card-body p-0">
                                 @* <h6 class="card-title text-danger">LOW</h6> *@
-                                <form method="POST" asp-action="RoundTwo" asp-route-playerId="@player.PlayerId"  asp-route-rdTwoData="low">
+                                <form class="roundz-2" method="POST" asp-action="RoundTwo" asp-route-playerId="@player.PlayerId"  asp-route-rdTwoData="low">
                                     <button class="rd2 btn btn-warning text-white py-3 w-100">LOW <i class="fa fa-arrow-circle-down"></i></button>
                                 </form>
                             </div>
@@ -535,13 +574,13 @@
                         <div class="front card border-white">
                             <div class="card-header p-0">
                                 @* <h6 class="card-title text-success">IN</h6> *@
-                                <form method="POST" asp-action="RoundThree" asp-route-playerId="@player.PlayerId"  asp-route-rdThreeData="in">
+                                <form class="roundz-3" method="POST" asp-action="RoundThree" asp-route-playerId="@player.PlayerId"  asp-route-rdThreeData="in">
                                     <button class="rd3 btn btn-success py-3 w-100"><i class="fa fa-arrow-circle-right"></i> IN <i class="fa fa-arrow-circle-left"></i></button>
                                 </form>
                             </div>
                             <div class="card-body p-0">
                                 @* <h6 class="card-title text-danger">OUT</h6> *@
-                                <form method="POST" asp-action="RoundThree" asp-route-playerId="@player.PlayerId"  asp-route-rdThreeData="out">
+                                <form class="roundz-3" method="POST" asp-action="RoundThree" asp-route-playerId="@player.PlayerId"  asp-route-rdThreeData="out">
                                     <button class="rd3 btn btn-danger py-3 w-100"><i class="fa fa-arrow-circle-left"></i>OUT<i class="fa fa-arrow-circle-right"></i></button>
                                 </form>
                             </div>
@@ -561,10 +600,10 @@
                             <div class="card-header p-0">
                                 @* <h6 class="card-title text-dark">♠ ♣</h6> *@
                                 <div class="row d-flex justify-content-center">
-                                    <form method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="spades">
+                                    <form class="roundz-4" method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="spades">
                                         <button class="rd4 btn btn-dark py-3"style="width:48px">♠</button>
                                     </form>
-                                    <form method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="hearts">
+                                    <form class="roundz-4" method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="hearts">
                                         <button class="rd4 btn btn-danger py-3" style="width:48px">♥</button>
                                     </form>
                                 </div>
@@ -572,10 +611,10 @@
                             <div class="card-body p-0">
                                 @* <h6 class="card-title text-danger">♥ ♦</h6> *@
                                 <div class="row d-flex justify-content-center">
-                                    <form method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="diamonds">
+                                    <form class="roundz-4" method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="diamonds">
                                         <button class="rd4 btn btn-danger py-3" style="width:48px">♦</button>
                                     </form>
-                                    <form method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="clubs">
+                                    <form class="roundz-4" method="POST" asp-action="RoundFour" asp-route-playerId="@player.PlayerId"  asp-route-rdFourData="clubs">
                                         <button class="rd4 btn btn-dark py-3"style="width:48px">♣</button>
                                     </form>
                                 </div>
@@ -664,3 +703,104 @@
         <partial name="_NewGame"></partial>
     </div>
 </div>
+
+<script>
+    $j3('.roundz-1').submit(function (e) {
+        e.preventDefault();
+        var form = $(this);
+        $.ajax({
+            type: form.attr('method'),
+            url: form.attr('action'),
+            data: form.serialize(),
+            success: function (data) {
+                    console.log(data);
+                    var html_to_append = '';
+                    $.each(data, function(i, d) {
+                        html_to_append +=
+                                '<ul style="list-style: none; padding:0px;"><li>' +
+                                    d + '</li></ul>';
+
+                    });
+                    $(".res-1").html(html_to_append);
+                    },
+                    error: function() {
+                    console.log(data);
+            }
+        });
+    });
+    </script>
+    <script>
+        $j3('.roundz-2').submit(function (e) {
+            e.preventDefault();
+            var form = $(this);
+            $.ajax({
+                type: form.attr('method'),
+                url: form.attr('action'),
+                data: form.serialize(),
+                success: function (data) {
+                        console.log(data);
+                        var html_to_append = '';
+                        $.each(data, function(i, d) {
+                            html_to_append +=
+                                    '<ul style="list-style: none; padding:0px;"><li>' +
+                                        d + '</li></ul>';
+    
+                        });
+                        $(".res-2").html(html_to_append);
+                        },
+                        error: function() {
+                        console.log(data);
+                }
+            });
+        }); 
+    </script>
+    <script>
+        $j3('.roundz-3').submit(function (e) {
+            e.preventDefault();
+            var form = $(this);
+            $.ajax({
+                type: form.attr('method'),
+                url: form.attr('action'),
+                data: form.serialize(),
+                success: function (data) {
+                        console.log(data);
+                        var html_to_append = '';
+                        $.each(data, function(i, d) {
+                            html_to_append +=
+                                    '<ul style="list-style: none; padding:0px;"><li>' +
+                                        d + '</li></ul>';
+    
+                        });
+                        $(".res-3").html(html_to_append);
+                        },
+                        error: function() {
+                        console.log(data);
+                }
+            });
+        }); 
+    </script>
+    <script>
+        $j3('.roundz-4').submit(function (e) {
+            e.preventDefault();
+            var form = $(this);
+            $.ajax({
+                type: form.attr('method'),
+                url: form.attr('action'),
+                data: form.serialize(),
+                success: function (data) {
+                        console.log(data);
+                        var html_to_append = '';
+                        $.each(data, function(i, d) {
+                            html_to_append +=
+                                    '<ul style="list-style: none; padding:0px;"><li>' +
+                                        d + '</li></ul>';
+    
+                        });
+                        $(".res-4").html(html_to_append);
+                        },
+                        error: function() {
+                        console.log(data);
+                }
+            });
+        });
+    </script>

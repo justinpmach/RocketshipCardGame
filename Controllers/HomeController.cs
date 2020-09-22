@@ -130,7 +130,36 @@ namespace RocketShip.Controllers
 
         //========Player Actions========
         [HttpPost("RoundOne")]
-        public IActionResult RoundOne(int playerId, string rdOneData)
+        // public JsonResult RoundOne(int playerId, string rdOneData) 
+        // {  
+        //     List<string> roundOneResult = new List<string>();
+        //     Player rdOnePlayer = db.Players.Include(p => p.rdOneCard).FirstOrDefault(p => p.PlayerId == playerId);
+        //     if(rdOneData == "smoke")
+        //     {
+        //         if(rdOnePlayer.rdOneCard.Suit == "♠" || rdOnePlayer.rdOneCard.Suit == "♣")
+        //         {
+        //             roundOneResult.Add(rdOnePlayer.Username + " Give 1 sip!");
+        //         }
+        //         else
+        //         {
+        //             roundOneResult.Add(rdOnePlayer.Username + " Take 1 sip!");
+        //         }
+        //     }
+        //     if(rdOneData == "fire")
+        //     {
+        //         if(rdOnePlayer.rdOneCard.Suit == "♥" || rdOnePlayer.rdOneCard.Suit == "♦")
+        //         {
+        //             roundOneResult.Add(rdOnePlayer.Username + " Give 1 sip!");
+        //         }
+        //         else
+        //         {
+        //             roundOneResult.Add(rdOnePlayer.Username + " Take 1 sip!");
+        //         }
+        //     }
+        //     // HttpContext.Session.SetObjectAsJson("RoundOneResult", roundOneResult);
+        //     return Json(roundOneResult);  
+        // }  
+        public ActionResult RoundOne(int playerId, string rdOneData)
         {
             List<string> roundOneResult = new List<string>();
             Player rdOnePlayer = db.Players.Include(p => p.rdOneCard).FirstOrDefault(p => p.PlayerId == playerId);
@@ -156,8 +185,10 @@ namespace RocketShip.Controllers
                     roundOneResult.Add(rdOnePlayer.Username + " Take 1 sip!");
                 }
             }
-            HttpContext.Session.SetObjectAsJson("RoundOneResult", roundOneResult);
-            return RedirectToAction("Dashboard");
+            var data = roundOneResult;
+            return new JsonResult(data);
+            // HttpContext.Session.SetObjectAsJson("RoundOneResult", roundOneResult);
+            // return RedirectToAction("Dashboard");
         }
 
         [HttpPost("RoundTwo")]
@@ -187,8 +218,10 @@ namespace RocketShip.Controllers
                     roundTwoResult.Add(rdTwoPlayer.Username + " " +  " Take 2 sips!");
                 }
             }
-            HttpContext.Session.SetObjectAsJson("RoundTwoResult", roundTwoResult);
-            return RedirectToAction("Dashboard");
+            // HttpContext.Session.SetObjectAsJson("RoundTwoResult", roundTwoResult);
+            // return RedirectToAction("Dashboard");
+            var data = roundTwoResult;
+            return new JsonResult(data);
         }
 
         [HttpPost("RoundThree")]
@@ -218,8 +251,10 @@ namespace RocketShip.Controllers
                     roundThreeResult.Add(rdThreePlayer.Username + " " +  "Take 3 sips!");
                 }
             }
-            HttpContext.Session.SetObjectAsJson("RoundThreeResult", roundThreeResult);
-            return RedirectToAction("Dashboard");
+            // HttpContext.Session.SetObjectAsJson("RoundThreeResult", roundThreeResult);
+            // return RedirectToAction("Dashboard");
+            var data = roundThreeResult;
+            return new JsonResult(data);
         }
 
         [HttpPost("RoundFour")]
@@ -271,8 +306,10 @@ namespace RocketShip.Controllers
                     roundFourResult.Add(rdFourPlayer.Username + " " +  " Take 4 sips!");
                 }
             }
-            HttpContext.Session.SetObjectAsJson("RoundFourResult", roundFourResult);
-            return RedirectToAction("Dashboard");
+            // HttpContext.Session.SetObjectAsJson("RoundFourResult", roundFourResult);
+            // return RedirectToAction("Dashboard");
+            var data = roundFourResult;
+            return new JsonResult(data);
         }
 
 
